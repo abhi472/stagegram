@@ -27,6 +27,7 @@ work_version = "2.9.0"
 hilt_work = "1.2.0"
 hilt_compiler = "1.2.0"
 truth = "1.1.4"
+firebase-bom = "33.2.0"
 
 [libraries]
 google_truth = { module = "com.google.truth:truth", version.ref = "truth" }
@@ -41,6 +42,7 @@ lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtim
 lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle-runtime-ktx" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+firebase-bom = {group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom"}
 rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
 ui = { group = "androidx.compose.ui", name = "ui" }
 ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
@@ -55,7 +57,7 @@ hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-com
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt_compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt_compiler" }
 coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
-
+firestore = { module = "com.google.firebase:firebase-firestore"}
 hilt_work = { module = "androidx.hilt:hilt-work", version.ref = "hilt_work" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }

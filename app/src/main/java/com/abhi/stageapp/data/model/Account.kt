@@ -6,3 +6,4 @@ data class Account(
     val profileImage: String,
     val stories: List<String>
 )
+
