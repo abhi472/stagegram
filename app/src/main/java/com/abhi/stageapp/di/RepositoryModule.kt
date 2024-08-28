@@ -16,9 +16,8 @@ class RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideAccountsDataRepository(db: FirebaseFirestore,
-                                     accountsDao: AccountsDao): MainRepository {
-        return MainRepositoryImpl(db, accountsDao)
+    fun provideAccountsDataRepository(accountsDao: AccountsDao): MainRepository {
+        return MainRepositoryImpl(accountsDao)
     }
 
 }

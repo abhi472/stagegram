@@ -89,10 +89,17 @@ dependencies {
 
     // For making Assertions in Test cases
     testImplementation(libs.google.truth)
+    testImplementation(libs.androidCoreTesting)
+    androidTestImplementation(libs.google.truth)
+    androidTestImplementation(libs.androidCoreTesting)
     androidTestImplementation(libs.google.truth)
     androidTestImplementation(libs.work.test)
 
     testImplementation(libs.junit)
+    testImplementation(libs.mockitoInline)
+    testImplementation(libs.androidxCoreTesting)
+    testImplementation(libs.coroutineTest)
+    testImplementation(libs.mockito)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))

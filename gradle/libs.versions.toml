@@ -28,6 +28,11 @@ hilt_work = "1.2.0"
 hilt_compiler = "1.2.0"
 truth = "1.1.4"
 firebase-bom = "33.2.0"
+mockito-inline = "3.7.0"
+mockito = "2.12.0"
+arch-core-testing = "2.2.0"
+coroutine-test= "1.4.3"
+android-core-testing = "1.2.0"
 
 [libraries]
 google_truth = { module = "com.google.truth:truth", version.ref = "truth" }
@@ -36,8 +41,10 @@ workmanager = { module = "androidx.work:work-runtime-ktx", version.ref = "work_v
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidxCoreTesting={module = "androidx.arch.core:core-testing", version.ref = "arch-core-testing"}
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+androidCoreTesting = {module = "androidx.test:core", version.ref = "android-core-testing"}
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle-runtime-ktx" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
@@ -45,6 +52,7 @@ compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = 
 firebase-bom = {group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom"}
 rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxjava" }
 ui = { group = "androidx.compose.ui", name = "ui" }
+coroutineTest = {module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutine-test"}
 ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -70,7 +78,8 @@ okhttp-interceptor-logging = { group = "com.squareup.okhttp3", name = "logging-i
 coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 gson = {group = "com.google.code.gson", name = "gson", version.ref = "gson"}
 reflect = {group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin"}
-
+mockitoInline = {module = "org.mockito:mockito-inline", version.ref = "mockito-inline" }
+mockito = {module = "org.mockito:mockito-android", version.ref = "mockito"}
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

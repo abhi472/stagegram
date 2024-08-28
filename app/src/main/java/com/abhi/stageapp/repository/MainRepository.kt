@@ -27,8 +27,7 @@ interface MainRepository {
 
 }
 
-class MainRepositoryImpl @Inject constructor(private val db: FirebaseFirestore,
-                                             private val accountsDao: AccountsDao): MainRepository {
+class MainRepositoryImpl @Inject constructor(private val accountsDao: AccountsDao): MainRepository {
 
 
     override suspend fun addAccountsToDB(querySnapshot: QuerySnapshot) : Flow<Unit> {

@@ -1,5 +1,6 @@
 package com.abhi.stageapp.screens
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.room.util.query
@@ -41,15 +42,16 @@ class MainViewModel @Inject constructor(
     val uiState: StateFlow<ApiState> = _uiState.asStateFlow()
 
     init {
-        loadData()
+        //loadData()
     }
 
-    private fun loadData() {
+    fun loadData() {
         viewModelScope.launch {
             mainUseCase.getLocalAccounts()
                 .distinctUntilChanged()
                 .flowOn(Dispatchers.IO)
                 .catch {
+                    Log.d("tag", it.message.toString())
                     updateUiState(
                         isError = true,
                         isLoading = false,
