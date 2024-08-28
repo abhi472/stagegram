@@ -1,19 +1,19 @@
 [versions]
 service = "4.4.2"
 agp = "8.2.2"
-appcompat = "1.6.1"
+appcompat = "1.7.0"
 kotlin = "1.9.22"
 hilt = "2.50"
 hilt-navigation-compose = "1.2.0"
 ksp = "1.9.22-1.0.16"
-core-ktx = "1.12.0"
+core-ktx = "1.13.1"
 junit = "4.13.2"
-coroutines = "1.7.1"
-androidx-test-ext-junit = "1.1.5"
-espresso-core = "3.5.1"
-lifecycle-runtime-ktx = "2.7.0"
-activity-compose = "1.8.2"
-compose-bom = "2024.02.01"
+coroutines = "1.7.3"
+androidx-test-ext-junit = "1.2.1"
+espresso-core = "3.6.1"
+lifecycle-runtime-ktx = "2.8.4"
+activity-compose = "1.9.1"
+compose-bom = "2024.08.00"
 compose-compiler = "1.5.9"
 navigation-compose = "2.7.7"
 room = "2.6.1"
@@ -23,7 +23,7 @@ coil = "2.5.0"
 rxjava = "3.0.0"
 gson = "2.10.1"
 spinner = "1.2.0"
-work_version = "2.9.0"
+work_version = "2.9.1"
 hilt_work = "1.2.0"
 hilt_compiler = "1.2.0"
 truth = "1.1.4"
@@ -31,8 +31,9 @@ firebase-bom = "33.2.0"
 mockito-inline = "3.7.0"
 mockito = "2.12.0"
 arch-core-testing = "2.2.0"
-coroutine-test= "1.4.3"
-android-core-testing = "1.2.0"
+coroutine-test= "1.7.3"
+android-core-testing = "1.6.1"
+foundation = "1.6.8"
 
 [libraries]
 google_truth = { module = "com.google.truth:truth", version.ref = "truth" }
@@ -80,6 +81,8 @@ gson = {group = "com.google.code.gson", name = "gson", version.ref = "gson"}
 reflect = {group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin"}
 mockitoInline = {module = "org.mockito:mockito-inline", version.ref = "mockito-inline" }
 mockito = {module = "org.mockito:mockito-android", version.ref = "mockito"}
+composeFoundation = {module = "androidx.compose.foundation:foundation", version.ref = "foundation"}
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

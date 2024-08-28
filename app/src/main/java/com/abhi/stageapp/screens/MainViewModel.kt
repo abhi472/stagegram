@@ -42,7 +42,7 @@ class MainViewModel @Inject constructor(
     val uiState: StateFlow<ApiState> = _uiState.asStateFlow()
 
     init {
-        //loadData()
+        loadData()
     }
 
     fun loadData() {
@@ -64,7 +64,7 @@ class MainViewModel @Inject constructor(
                             viewModelScope.launch {
                                 mainUseCase
                                     .updateDB(query)
-                                    .flowOn(Dispatchers.IO)
+                                    .flowOn(Dispatchers.IO).catch { }.collect()
                             }
 
                             updateUiState(
