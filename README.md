@@ -35,6 +35,11 @@ While the current implementation provides a strong foundation, there's room for 
 * Video Support: Expanding story content to include videos would diversify user expression and engagement.
 * Accessibility: Ensuring the app caters to users with disabilities by adhering to accessibility best practices.
 
+<b>Test Cases:</b>
+
+* DatabaseTest.kt to test DB read and write.
+* MainViewModelTest.kt tests viewmodel and usecase
+
 
 
 
