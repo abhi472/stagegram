@@ -16,35 +16,25 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
-@RunWith(AndroidJUnit4::class) // Annotate with @RunWith
+@RunWith(AndroidJUnit4::class)
 class DatabaseTest : TestCase() {
-    // get reference to the LanguageDatabase and LanguageDao class
     private lateinit var db: AccountsDB
     private lateinit var dao: AccountsDao
 
-    // Override function setUp() and annotate it with @Before
-    // this function will be called at first when this test class is called
     @Before
     public override fun setUp() {
-        // get context -- since this is an instrumental test it requires context from the running application
         val context = ApplicationProvider.getApplicationContext<Context>()
-        // initialize the db and dao variable
         db = Room.inMemoryDatabaseBuilder(context, AccountsDB::class.java).build()
         dao = db.accountsDao()
     }
 
-    // Override function closeDb() and annotate it with @After
-    // this function will be called at last when this test class is called
     @After
     fun closeDb() {
         db.close()
     }
 
-    // create a test function and annotate it with @Test
-    // here we are first adding an item to the db and then checking if that item
-    // is present in the db -- if the item is present then our test cases pass
-    @Test
-    fun writeAndReadLanguage(): Unit = runBlocking {
+   @Test
+    fun writeAndRead(): Unit = runBlocking {
         val account = Account(id = "1", name = "", profileImage = "", stories = emptyList())
 
         dao.insert(account.asEntity())
