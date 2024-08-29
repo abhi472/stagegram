@@ -64,6 +64,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val viewState by remember(viewModel) { viewModel.uiState }
                 .collectAsState()
+            viewModel.loadData()
             StageAppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(

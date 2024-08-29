@@ -41,9 +41,6 @@ class MainViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(ApiState())
     val uiState: StateFlow<ApiState> = _uiState.asStateFlow()
 
-    init {
-        loadData()
-    }
 
     fun loadData() {
         viewModelScope.launch {
