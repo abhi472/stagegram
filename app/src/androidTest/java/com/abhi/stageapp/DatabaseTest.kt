@@ -35,7 +35,10 @@ class DatabaseTest : TestCase() {
 
    @Test
     fun writeAndRead(): Unit = runBlocking {
-        val account = Account(id = "1", name = "", profileImage = "", stories = emptyList())
+        val account = Account(id = "1",
+            name = "",
+            profileImage = "",
+            stories = emptyList())
 
         dao.insert(account.asEntity())
         val accounts = dao.getAccounts()
