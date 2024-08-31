@@ -40,6 +40,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
@@ -138,13 +139,13 @@ fun CircularImageView(
         Modifier.padding(horizontal = 20.dp)
         Box(
             Modifier
+                .testTag("profile")
                 .padding(horizontal = 16.dp, vertical = 8.dp)
                 .align(Alignment.CenterHorizontally)
                 .clickable(onClick = {
                     showDialog = true
                     currentIndex = 0
-                })
-            ,
+                }),
             contentAlignment = Alignment.Center,
         ) {
             Image(
@@ -154,6 +155,8 @@ fun CircularImageView(
                 modifier = Modifier
                     .clip(CircleShape)
                     .size(size.dp)
+                    .testTag("profilePicture")
+
             )
 
 
@@ -193,7 +196,7 @@ fun CircularImageView(
             }
         }
         Dialog(onDismissRequest = { showDialog = false }, properties =
-            DialogProperties(usePlatformDefaultWidth = false)
+            DialogProperties(usePlatformDefaultWidth = false),
         ) {
             Surface(
                 modifier = Modifier.fillMaxSize(),
@@ -203,6 +206,7 @@ fun CircularImageView(
                 Card(
                     shape = RoundedCornerShape(16.dp),
                     modifier = Modifier
+                        .testTag("stories")
                         .background(Color.Transparent)
                         .width((configuration.screenWidthDp).dp)
                         .height(configuration.screenHeightDp.dp)
@@ -210,6 +214,7 @@ fun CircularImageView(
                 ) {
                     Box(
                         modifier = Modifier
+                            .testTag("story")
                             .fillMaxSize()
                             .clickable {
                                 if(currentIndex == imageCount -1)
@@ -223,7 +228,7 @@ fun CircularImageView(
                     ) {
                         AsyncImage(model = stories[currentIndex],
                             contentDescription = "$name's stories",
-                            modifier = Modifier.fillMaxSize(),
+                            modifier = Modifier.fillMaxSize().testTag("dialogImage"),
                             contentScale = ContentScale.Crop,
                             onSuccess = {
 
@@ -248,7 +253,7 @@ fun CircularImageView(
                                                     0f
                                                 else 100f
                                                        },
-                                            modifier = Modifier.fillMaxSize(),
+                                            modifier = Modifier.fillMaxSize().testTag("progress $index"),
                                             color = Color.White,
                                         )
                                 }
